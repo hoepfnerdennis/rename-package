@@ -1,0 +1,11 @@
+{
+  "name": "rename-package",
+  "version": "1.0.0",
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "bin": {
+    "rename-package": "index.js"
+  }
+}
