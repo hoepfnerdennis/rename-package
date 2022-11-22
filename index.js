@@ -19,13 +19,11 @@ if (name.endsWith("rename-package")) {
   return process.exit(1);
 }
 
-const packageJson = require(PATH.resolve(process.cwd(), path, "package.json"));
+const pathToPackageJson = PATH.resolve(process.cwd(), path, "package.json");
+const packageJson = require(pathToPackageJson);
 
 console.log('Current name is "' + packageJson.name + '"');
 console.log('New name will be "' + name + '"');
 packageJson.name = name;
 
-FS.writeFileSync(
-  PATH.resolve(process.cwd(), "package.json"),
-  JSON.stringify(packageJson, null, 2)
-);
+FS.writeFileSync(pathToPackageJson, JSON.stringify(packageJson, null, 4));
